@@ -319,12 +319,12 @@ if True:
         # Power from sunlight:
         P_sun[i-1] = A_ill[i-1]\
             * solar_flux * n_cell * n_packing \
-            * (1 - degradation * years_elapsed)
+            # * (1 - degradation) ** years_elapsed)
         
         # Power from albedo:
         P_alb[i-1] = A_ill2[i-1] * multiplier[i-1] * ALB_earth_avg \
             * solar_flux * n_cell * n_packing \
-            * (1 - degradation * years_elapsed)    
+            # * (1 - degradation) ** years_elapsed)    
         
         # Calculate the total power
         P_tot[i-1] = P_sun[i-1] + P_alb[i-1]
