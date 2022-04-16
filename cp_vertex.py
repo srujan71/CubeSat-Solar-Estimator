@@ -97,19 +97,19 @@ class Vertex:
         
         # ==== Define relevant rotation matrices ====
         Rx = np.array([[1,      0,       0],
-                       [0, cos(a), -sin(a)],
-                       [0, sin(a),  cos(a)]])
+                       [0, cos(a),  sin(a)],
+                       [0, -sin(a), cos(a)]])
         
-        Ry = np.array([[ cos(b), 0, sin(b)],
+        Ry = np.array([[ cos(b), 0, -sin(b)],
                        [      0, 1,      0],
-                       [-sin(b), 0, cos(b)]])
+                       [ sin(b), 0, cos(b)]])
         
-        Rz = np.array([[cos(c), -sin(c), 0],
-                       [sin(c),  cos(c), 0],
+        Rz = np.array([[cos(c), sin(c),  0],
+                       [-sin(c), cos(c), 0],
                        [     0,       0, 1]])
 
         # ==== Perform rotation ====
-        for axis in reversed(seq):
+        for axis in (seq):
             
             # If no Centre of Rotation (cor) is given, take frame origin.
             # If not, subtract coordinates of cor first before applying 

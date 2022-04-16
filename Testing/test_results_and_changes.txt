@@ -1,0 +1,8 @@
+Log file for the results of testing and changes made
+
+
+1) cp_vertex:
+Result: FAIL- Rotation matrices entries incorrect and the rotation sequence incorrect.
+Changes: Corrected the matrices and removed the "reversed" from the for loop.
+
+2) cp_face:
